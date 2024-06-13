@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: br.edu.uniritter.gestaoqualidade.ControllerTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.032 s <<< FAILURE! -- in br.edu.uniritter.gestaoqualidade.ControllerTests
+br.edu.uniritter.gestaoqualidade.ControllerTests.testCPFIncomplete -- Time elapsed: 0.020 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <br.edu.uniritter.gestaoqualidade.exceptions.CPFIncompleteException> but was: <java.lang.StringIndexOutOfBoundsException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at br.edu.uniritter.gestaoqualidade.ControllerTests.testCPFIncomplete(AppTest.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.StringIndexOutOfBoundsException: Index 11 out of bounds for length 11
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
+	at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
+	at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.lang.String.checkIndex(String.java:4832)
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:46)
+	at java.base/java.lang.String.charAt(String.java:1555)
+	at br.edu.uniritter.gestaoqualidade.controllers.AppController.checkCPF(AppController.java:11)
+	at br.edu.uniritter.gestaoqualidade.ControllerTests.lambda$testCPFIncomplete$0(AppTest.java:31)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.edu.uniritter.gestaoqualidade.CalculatorTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 s -- in br.edu.uniritter.gestaoqualidade.CalculatorTests
