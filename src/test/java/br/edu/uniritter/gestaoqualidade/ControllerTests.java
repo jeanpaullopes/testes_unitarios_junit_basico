@@ -1,6 +1,7 @@
 package br.edu.uniritter.gestaoqualidade;
 
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -21,6 +22,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import br.edu.uniritter.gestaoqualidade.controllers.AppController;
 import br.edu.uniritter.gestaoqualidade.exceptions.CPFIncompleteException;
+import br.edu.uniritter.gestaoqualidade.exceptions.CPFMalFormedException;
 
 class ControllerTests {
 
@@ -31,6 +33,50 @@ class ControllerTests {
             AppController.checkCPF("123.456.789");
         });
     }
+
+	@Test
+    @DisplayName("CPF incompleto")
+    void testCPFInvalido() {
+        assertThrows(CPFMalFormedException.class, () -> {
+            AppController.checkCPF("123.456.789/00");
+        });
+    }
+
+	@Test
+    @DisplayName("CPF  Null")
+    void testCPFNull() {
+        assertThrows(NullPointerException.class, () -> {
+            AppController.checkCPF(null);
+        });
+    }
+	@Test
+    @DisplayName("CPF completo com Throws")
+    void testCPFComplete2() {
+		try {
+		assertTrue(
+            AppController.checkCPF("123.456.789-00")
+        );
+		} catch (Exception e) {
+			
+		}
+    }
+
+	@Test
+	@DisplayName("CPF correto")
+	void testCPFCorreto() {
+		
+		assertTrue(AppController.checkCPFSException("123.456.789-00"));
+		assertFalse(AppController.checkCPFSException("123.456.789-01"));
+		
+
+	}
+
+	@Test
+	
+
+	void testDesconto() {
+		assertEquals(90.09, AppController.desconto(100.10f, 10));
+	}
 
     /*
 	@Test
