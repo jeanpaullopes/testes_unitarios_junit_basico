@@ -1,0 +1,26 @@
+{
+    "configurations": [
+    {
+        "type": "java",
+        "name": "Launch Java Program",
+        "request": "launch",
+        "mainClass": ""
+    },
+    {
+        "type": "java",
+        "name": "Launch Current File",
+        "request": "launch",
+        "mainClass": "${file}"
+    },
+    
+    {
+        "type": "java",
+        "name": "Launch Java Test",
+        "request": "launch",
+        "mainClass": "${file}",
+        "projectName": "${workspaceFolderBasename}",
+        "cwd": "${workspaceFolder}",
+        "args": "-Dtest=${file}"
+    }
+]
+}

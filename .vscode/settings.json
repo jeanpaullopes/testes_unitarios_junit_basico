@@ -1,0 +1,10 @@
+{
+    "java.test.config": [
+    {
+        "name": "default",
+        "workingDirectory": "${workspaceFolder}",
+        
+    }
+],
+"java.configuration.updateBuildConfiguration": "interactive"
+}
